@@ -30,6 +30,9 @@ class CustomerRequest extends FormRequest
             'name' => [
                 'required',
             ],
+            'ftid' => [
+                'required',
+            ],
             'email' => [
                 'email',
                 'nullable',
@@ -132,6 +135,7 @@ class CustomerRequest extends FormRequest
         return collect($this->validated())
             ->only([
                 'name',
+                'ftid',
                 'email',
                 'currency_id',
                 'password',
