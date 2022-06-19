@@ -23,7 +23,6 @@ class CustomersController extends Controller
 
         $limit = $request->has('limit') ? $request->limit : 10;
 
-        $request_all=$request->all();
         $customers = Customer::with('creator')
             ->whereCompany()
             ->applyFilters($request->all())

@@ -1,6 +1,6 @@
 {
-  "name": "kamansoft/krater",
-  "description": "Free & Open Source Invoice App for Individuals & Small Businesses. a fork of https://craterapp.com",
+  "name": "crater-invoice/crater",
+  "description": "Free & Open Source Invoice App for Individuals & Small Businesses. https://craterapp.com",
   "keywords": [
     "framework",
     "laravel"
@@ -81,10 +81,7 @@
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
-    "sort-packages": true,
-    "allow-plugins": {
-      "pestphp/pest-plugin": true
-    }
+    "sort-packages": true
   },
   "extra": {
     "laravel": {

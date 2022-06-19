@@ -57,27 +57,6 @@
               />
             </BaseInputGroup>
 
-
-            <BaseInputGroup
-              :label="$t('customers.ftid')"
-              required
-              :error="
-                v$.currentCustomer.ftid.$error &&
-                v$.currentCustomer.ftid.$errors[0].$message
-              "
-              :content-loading="isFetchingInitialData"
-            >
-              <BaseInput
-                v-model="customerStore.currentCustomer.ftid"
-                :content-loading="isFetchingInitialData"
-                type="text"
-                name="name"
-                class=""
-                :invalid="v$.currentCustomer.ftid.$error"
-                @input="v$.currentCustomer.ftid.$touch()"
-              />
-            </BaseInputGroup>
-
             <BaseInputGroup
               :label="$t('customers.primary_contact_name')"
               :content-loading="isFetchingInitialData"
@@ -658,13 +637,6 @@ const rules = computed(() => {
         minLength: helpers.withMessage(
           t('validation.name_min_length', { count: 3 }),
           minLength(3)
-        ),
-      },
-      ftid: {
-        required: helpers.withMessage(t('validation.required'), required),
-        minLength: helpers.withMessage(
-          t('validation.ftid_min_length', { count: 6 }),
-          minLength(6)
         ),
       },
       prefix: {

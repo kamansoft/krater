@@ -256,11 +256,6 @@ class Customer extends Authenticatable implements HasMedia
         return $query->where('contact_name', 'LIKE', '%'.$contactName.'%');
     }
 
-    public function scopeWhereFtid($query, $ftid)
-    {
-        return $query->where('ftid', 'LIKE', '%'.$ftid.'%');
-    }
-
     public function scopeWhereDisplayName($query, $displayName)
     {
         return $query->where('name', 'LIKE', '%'.$displayName.'%');
@@ -324,11 +319,6 @@ class Customer extends Authenticatable implements HasMedia
         if ($filters->get('contact_name')) {
             $query->whereContactName($filters->get('contact_name'));
         }
-
-        if ($filters->get('ftid')) {
-            $query->whereFtid($filters->get('ftid'));
-        }
-
 
         if ($filters->get('display_name')) {
             $query->whereDisplayName($filters->get('display_name'));

@@ -10,8 +10,6 @@ Homestead.yaml
 .env
 .phpunit.result.cache
 .rnd
-/vendor
-composer.lock
 /.expo
 /.vscode
 /docker-compose/db/data/
