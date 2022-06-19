@@ -34,6 +34,20 @@
                   @input="v$.name.$touch()"
                 />
               </BaseInputGroup>
+              <BaseInputGroup
+                :label="$t('customers.ftid')"
+                required
+                :error="v$.ftid.$error && v$.ftid.$errors[0].$message"
+              >
+                <BaseInput
+                  v-model.trim="customerStore.currentCustomer.ftid"
+                  type="text"
+                  name="name"
+                  class="mt-1 md:mt-0"
+                  :invalid="v$.ftid.$error"
+                  @input="v$.ftid.$touch()"
+                />
+              </BaseInputGroup>
 
               <BaseInputGroup
                 :label="$tc('settings.currencies.currency')"
@@ -509,6 +523,13 @@ const rules = computed(() => {
       minLength: helpers.withMessage(
         t('validation.name_min_length', { count: 3 }),
         minLength(3)
+      ),
+    },
+    ftid: {
+      required: helpers.withMessage(t('validation.required'), required),
+      minLength: helpers.withMessage(
+        t('validation.ftid', { count: 6 }),
+        minLength(6)
       ),
     },
     currency_id: {

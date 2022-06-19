@@ -52,6 +52,15 @@
         />
       </BaseInputGroup>
 
+      <BaseInputGroup :label="$t('customers.ftid')" class="text-left">
+        <BaseInput
+          v-model="filters.ftid"
+          type="text"
+          name="address_name"
+          autocomplete="off"
+        />
+      </BaseInputGroup>
+
       <BaseInputGroup :label="$t('customers.contact_name')" class="text-left">
         <BaseInput
           v-model="filters.contact_name"
@@ -60,6 +69,8 @@
           autocomplete="off"
         />
       </BaseInputGroup>
+
+
 
       <BaseInputGroup :label="$t('customers.phone')" class="text-left">
         <BaseInput
@@ -221,6 +232,7 @@ const { t } = useI18n()
 
 let filters = reactive({
   display_name: '',
+  ftid:'',
   contact_name: '',
   phone: '',
 })
@@ -255,6 +267,12 @@ const customerColumns = computed(() => {
       key: 'name',
       label: t('customers.name'),
       thClass: 'extra',
+      tdClass: 'font-medium text-gray-900',
+    },
+    {
+      key: 'ftid',
+      label: t('customers.ftid'),
+      sortable: false,
       tdClass: 'font-medium text-gray-900',
     },
     { key: 'phone', label: t('customers.phone') },
@@ -305,6 +323,7 @@ function hasAtleastOneAbility() {
 async function fetchData({ page, filter, sort }) {
   let data = {
     display_name: filters.display_name,
+    ftid: filters.ftid,
     contact_name: filters.contact_name,
     phone: filters.phone,
     orderByField: sort.fieldName || 'created_at',
@@ -328,6 +347,7 @@ async function fetchData({ page, filter, sort }) {
 
 function clearFilter() {
   filters.display_name = ''
+  filters.ftid = ''
   filters.contact_name = ''
   filters.phone = ''
 }

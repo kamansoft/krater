@@ -175,6 +175,7 @@
     "add_customer": "Agregar cliente",
     "contacts_list": "Lista de clientes",
     "name": "Nombre",
+    "ftid" : "Codigo de Identificacion Fiscal o Tributaria",
     "mail": "Correo | Correos",
     "statement": "Declaración",
     "display_name": "Nombre para mostrar",
@@ -1454,7 +1455,8 @@
     "at_least_one_ability": "Por favor, selecciona al menos un permiso.",
     "valid_driver_key": "Por favor, introduza una clave {driver} válida.",
     "valid_exchange_rate": "Por favor, introduce una tasa de cambio válida.",
-    "company_name_not_same": "El nombre de la empresa debe coincidir con el nombre indicado."
+    "company_name_not_same": "El nombre de la empresa debe coincidir con el nombre indicado.",
+    "ftid_min_length": "El codigo de identificacion  debe tener al menos {count} caracteres."
   },
   "errors": {
     "starter_plan": "¡Esta función está disponible en el plan Starter y en adelante!",
